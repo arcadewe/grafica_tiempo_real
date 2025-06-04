@@ -22,7 +22,7 @@ app.get('/api/alumnos', async (req, res) => {
         const rows = await conn.query('SELECT * FROM alumno');
         res.json(rows);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json([]); // Devuelve un array vacío en caso de error
     } finally {
         if (conn) conn.release();
     }

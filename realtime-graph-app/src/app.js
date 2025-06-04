@@ -8,6 +8,10 @@ async function fetchData() {
 }
 
 function getChartData(alumnos) {
+    if (!Array.isArray(alumnos)) {
+        console.error('La respuesta no es un array:', alumnos);
+        return { labels: [], data: [] };
+    }
     // Contar alumnos por estado
     const estados = {
         1: 'Activo',
