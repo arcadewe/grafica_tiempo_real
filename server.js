@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mariadb = require('mariadb');
+const https = require('https');
+const fs = require('fs');
 
 const app = express();
 app.use(cors());
@@ -26,8 +28,13 @@ app.get('/api/alumnos', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Servidor corriendo en http://0.0.0.0:3000');
+const options = {
+    key: fs.readFileSync('src\clave-privada.key'),
+    cert: fs.readFileSync('src\certificado.crt')
+};
+
+https.createServer(options, app).listen(3000, () => {
+    console.log('Servidor HTTPS corriendo en https://0.0.0.0:3000');
 });
 
 //https://arcadewe.github.io/grafica_tiempo_real/realtime-graph-app/src/index.html
