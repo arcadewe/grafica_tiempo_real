@@ -22,7 +22,8 @@ app.get('/api/alumnos', async (req, res) => {
         const rows = await conn.query('SELECT * FROM alumno');
         res.json(rows);
     } catch (err) {
-        res.status(500).json([]); // Devuelve un array vacío en caso de error
+        console.error('Error en /api/alumnos:', err); // <-- Agrega esto
+        res.status(500).json([]);
     } finally {
         if (conn) conn.release();
     }
