@@ -29,8 +29,8 @@ app.get('/api/alumnos', async (req, res) => {
 });
 
 const options = {
-    key: fs.readFileSync('src/clave-privada.key'),
-    cert: fs.readFileSync('src/certificado.crt')
+    key: fs.readFileSync('realtime-graph-app/src/certificado.crt/clave-privada.key'),
+    cert: fs.readFileSync('realtime-graph-app/src/clave-privada.key')
 };
 
 https.createServer(options, app).listen(3000, () => {
