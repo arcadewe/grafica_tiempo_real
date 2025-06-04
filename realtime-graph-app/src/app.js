@@ -2,7 +2,7 @@
 let myChart;
 
 async function fetchData() {
-    const response = await fetch('http://localhost:3000/api/alumnos');
+    const response = await fetch('http://192.168.1.211:3000/api/alumnos');
     const data = await response.json();
     return data;
 }
