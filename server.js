@@ -29,3 +29,5 @@ app.get('/api/alumnos', async (req, res) => {
 app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000');
 });
+
+//https://arcadewe.github.io/grafica_tiempo_real/realtime-graph-app/src/index.html
