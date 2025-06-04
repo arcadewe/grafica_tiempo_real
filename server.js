@@ -6,9 +6,9 @@ const app = express();
 app.use(cors());
 
 const pool = mariadb.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: '%',
+    user: 'User',
+    password: 'Trial1',
     database: 'universidad',
     connectionLimit: 5
 });
